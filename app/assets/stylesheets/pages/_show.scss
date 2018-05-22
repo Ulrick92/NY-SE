@@ -1,0 +1,38 @@
+.sock-display {
+justify-content: space-around;
+background: white;
+padding: 30px;
+border-radius: 4px;
+box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+border: 1px solid rgba(0, 0, 0, 0.1);
+}
+h1 {
+  margin-left: 34px;
+}
+li {
+  display: inline-block;
+  margin-right: 50px;
+  color: #C8909F;
+}
+ul {
+  margin-left: -35px;
+}
+.btn-treehouse {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #B5E0D6;
+  opacity: 1;
+  transition: background 0.3s ease;
+  margin-left: 80px;
+}
+.btn-treehouse:hover {
+  opacity: 0.7;
+  background: #B5E0D6;
+  text-decoration: none;
+  color: white;
+}
+h4 {
+  margin-top: 50px;
+}
