@@ -1,5 +1,5 @@
 class SocksController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_sock, only:[:show, :edit, :update, :destroy]
 
   def index
@@ -16,6 +16,7 @@ class SocksController < ApplicationController
 
   def create
     @sock = Sock.new(sock_params)
+    @sock.user = current_user
     authorize @sock
     if @sock.save
       redirect_to sock_path(@sock)
@@ -25,6 +26,7 @@ class SocksController < ApplicationController
   end
 
   def edit
+    @user = user
   end
 
   def update
