@@ -22,7 +22,12 @@
   margin-bottom: 30px;
 }
 
-
+.container-home {
+  display: flex;
+  justify-content: space-between;
+  align-item: center;
+  width:1000px;
+}
 
 .btn-home-banner {
   color: #FFFEE3;
@@ -36,4 +41,55 @@
   opacity: 1;
   text-decoration: none;
   color: #FFFEE3;
+}
+
+.btn-treehouse-banner {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: bold;
+  background: #6AD58B;
+  transition: background 0.3s ease;
+}
+
+.btn-treehouse-banner:hover {
+  opacity: 1;
+  background: #3ac162;
+  text-decoration: none;
+  color: white;
+}
+
+ul {
+ list-style-type: none;
+ margin:20px;
+}
+
+#search-form {
+  border: 1px solid rgba(30, 30, 30,0.8);
+  background-color: rgba(30, 30, 30,0.8);
+  border-radius: 5px;
+  text-align: center;
+  vertical-align: center;
+  padding:20px 40px 20px 20px;
+
+h3 {
+  font-size: 20px;
+  font-weight:lighter;
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+
+li {
+  margin-top:10px;
+}
+}
+
+.list-container {
+  vertical-align:center;
+  height:150px;
+}
+
+.banner-content {
+  h1 {
+    margin-top: 40px;}
 }
