@@ -1,14 +1,2 @@
 <h1>Add a new sock</h1>
-
-<%= simple_form_for(@sock) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :size %>
-  <%= f.input :price %>
-  <%= f.input :shipping_method %>
-  <%= f.input :color %>
-  <%= f.input :cleanliness %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.submit %>
-<% end %>
+<%= render "form" %>
