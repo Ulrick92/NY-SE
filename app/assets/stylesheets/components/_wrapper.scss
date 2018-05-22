@@ -4,9 +4,18 @@
 }
 .wrapper {
   background-color: #BBDED6;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  height: 100px;
 }
-.card-wrapper {
+.cards {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  height: 90px;
+}
+.icon {
+  width: 300px;
+  height: 30px;
+  text-align: center;
 }
