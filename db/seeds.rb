@@ -13,7 +13,7 @@ a = Sock.create!(
   shipping_method: 'domicile',
   color: 'Noire',
   cleanliness: 5,
-  photo: 'thought-catalog-470985-unsplash',
+  remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526994888/thought-catalog-470985-unsplash.jpg',
   user_id: 1
 )
 
@@ -25,7 +25,7 @@ b = Sock.create!(
   shipping_method: 'domicile',
   color: 'Noire',
   cleanliness: 5,
-  photo: 'yasin-hosgor-459740-unsplash',
+  remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526994889/yasin-hosgor-459740-unsplash.jpg',
   user_id: 1
 )
 
@@ -37,7 +37,7 @@ c = Sock.create!(
   shipping_method: 'domicile',
   color: 'Blanche',
   cleanliness: 5,
-  photo: 'thought-catalog-462302-unsplash',
+  remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526999126/jstzei2rn7dl9itsir0i.jpg',
   user_id: 1
 )
 
@@ -49,7 +49,7 @@ d = Sock.create!(
   shipping_method: 'domicile',
   color: 'Blanche',
   cleanliness: 2,
-  photo: 'clem-onojeghuo-366239-unsplash',
+  remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526999040/xpcbu3qdzdgtrd1ki6s3.jpg',
   user_id: 1
 )
 
@@ -62,11 +62,11 @@ e = Sock.create!(
   shipping_method: 'domicile',
   color: 'Blanche',
   cleanliness: 7,
-  photo: 'devin-avery-553496-unsplash',
+  remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526998981/e90b6dl3rbteoid74m0x.jpg',
   user_id: 1
 )
 
-f = Sock.new(
+f = Sock.create!(
   title: 'Adidas Noire',
   description: 'Adidas noire droite',
   size: 43,
@@ -74,10 +74,9 @@ f = Sock.new(
   shipping_method: 'domicile',
   color: 'noire',
   cleanliness: 10,
-  photo: 'dmitriy-ilkevich-435759-unsplash',
+  remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526994888/thought-catalog-470985-unsplash.jpg',
   user_id: 1
 )
-f.save
 
 puts 'created Socks'
 
