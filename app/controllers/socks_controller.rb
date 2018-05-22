@@ -26,7 +26,7 @@ class SocksController < ApplicationController
   end
 
   def edit
-    @user = user
+    @user = current_user
   end
 
   def update
