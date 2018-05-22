@@ -3,19 +3,48 @@
   width: 970px;
 }
 .wrapper {
-  background-color: #BBDED6;
-  margin-top: 15px;
+  border-top: 8px solid rgba(47, 202, 171, 1.00);
+  background-color: white;
+  margin-top: 0px;
   margin-bottom: 15px;
-  height: 100px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  position:relative;
+
 }
 .cards {
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 90px;
+  padding-bottom: 30px;
 }
 .icon {
   width: 300px;
   height: 30px;
   text-align: center;
+}
+
+
+.btn-treehouse {
+  position:absolute;
+  bottom:20px;
+  right:90px;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: rgba(64, 154, 215, 1.00);
+  border: 2px solid rgba(38, 132, 226, 1.00);
+  transition: background 0.3s ease;
+  font-size: 10px;
+}
+
+.btn-treehouse:hover {
+
+  opacity: 1;
+  background: rgba(38, 132, 226, 1.00);
+  text-decoration: none;
+  color: white;
 }

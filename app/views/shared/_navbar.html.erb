@@ -3,47 +3,51 @@
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo_nyse.png", height: 50 %>
   <% end %>
+
   <form class="navbar-form navbar-left" role="search">
-    <div class="form-group">
-      <input type="text" class="form-control" placeholder="Search a socks">
-    </div>
-    <button type="submit" class="btn-medium">Search</button>
+     <div class="form-group">
+       <input type="text" class="form-control" placeholder="Search a socks">
+     </div>
+     <button type="submit" class="btn-medium">Search</button>
   </form>
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <!-- Links -->
-    <%= link_to "+ Add a new sock", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Blog", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to " + Create an add ", new_sock_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <% if user_signed_in? %>
 
-    <!-- Avatar with dropdown menu -->
-    <div class="navbar-wagon-item">
-      <div class="dropdown">
-        <%= image_tag "boris_avatar.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li>
-            <%= link_to "#" do %>
-              <i class="fa fa-user"></i> <%= t(".profile", default: "Edit my profile") %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to "#" do %>
-            <i class="far fa-credit-card"></i>  <%= t(".settings", default: "My transactions") %>
-            <% end %>
-          </li>
-           <li>
-            <%= link_to "#" do %>
-              <i class="fas fa-shoe-prints"></i> <%= t(".profile", default: "Socks Dashboard") %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to "#" do %>
-              <i class="fa fa-cog"></i>  <%= t(".settings", default: "Log out") %>
-            <% end %>
-          </li>
-        </ul>
+      <!-- Links when logged in -->
+      <%= link_to "Mu orders", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My socks", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <!-- Avatar with dropdown menu -->
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+    <% else %>
+      <!-- Login link (when logged out) -->
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <% end %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
@@ -58,3 +62,4 @@
     </div>
   </div>
 </div>
+
