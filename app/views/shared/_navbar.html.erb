@@ -3,7 +3,12 @@
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo_nyse.png", height: 50 %>
   <% end %>
-
+  <form class="navbar-form navbar-left" role="search">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search a socks">
+    </div>
+    <button type="submit" class="btn-medium">Search</button>
+  </form>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
@@ -18,22 +23,22 @@
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
             <%= link_to "#" do %>
-              <i class="fa fa-user"></i> <%= t(".profile", default: "Modifier Profil") %>
+              <i class="fa fa-user"></i> <%= t(".profile", default: "Edit my profile") %>
             <% end %>
           </li>
           <li>
             <%= link_to "#" do %>
-              <i class="fa fa-cog"></i>  <%= t(".settings", default: "Mes achats") %>
+            <i class="far fa-credit-card"></i>  <%= t(".settings", default: "My transactions") %>
             <% end %>
           </li>
            <li>
             <%= link_to "#" do %>
-              <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+              <i class="fas fa-shoe-prints"></i> <%= t(".profile", default: "Socks Dashboard") %>
             <% end %>
           </li>
-          li>
+          <li>
             <%= link_to "#" do %>
-              <i class="fa fa-cog"></i>  <%= t(".settings", default: "Mes chausettes") %>
+              <i class="fa fa-cog"></i>  <%= t(".settings", default: "Log out") %>
             <% end %>
           </li>
         </ul>
