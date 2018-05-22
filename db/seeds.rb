@@ -13,7 +13,7 @@ a = Sock.create!(
   shipping_method: 'domicile',
   color: 'Noire',
   cleanliness: 5,
-  photo: 'thought-catalog-470985-unsplash',
+  remote_photo_url: 'thought-catalog-470985-unsplash',
   user_id: 1
 )
 
@@ -25,7 +25,7 @@ b = Sock.create!(
   shipping_method: 'domicile',
   color: 'Noire',
   cleanliness: 5,
-  photo: 'yasin-hosgor-459740-unsplash',
+  remote_photo_url: 'yasin-hosgor-459740-unsplash',
   user_id: 1
 )
 
@@ -37,7 +37,7 @@ c = Sock.create!(
   shipping_method: 'domicile',
   color: 'Blanche',
   cleanliness: 5,
-  photo: 'thought-catalog-462302-unsplash',
+  remote_photo_url: 'thought-catalog-462302-unsplash',
   user_id: 1
 )
 
@@ -49,7 +49,7 @@ d = Sock.create!(
   shipping_method: 'domicile',
   color: 'Blanche',
   cleanliness: 2,
-  photo: 'clem-onojeghuo-366239-unsplash',
+  remote_photo_url: 'clem-onojeghuo-366239-unsplash',
   user_id: 1
 )
 
@@ -62,7 +62,7 @@ e = Sock.create!(
   shipping_method: 'domicile',
   color: 'Blanche',
   cleanliness: 7,
-  photo: 'devin-avery-553496-unsplash',
+  remote_photo_url: 'devin-avery-553496-unsplash',
   user_id: 1
 )
 
@@ -74,7 +74,7 @@ f = Sock.new(
   shipping_method: 'domicile',
   color: 'noire',
   cleanliness: 10,
-  photo: 'dmitriy-ilkevich-435759-unsplash',
+  remote_photo_url: 'dmitriy-ilkevich-435759-unsplash',
   user_id: 1
 )
 f.save
