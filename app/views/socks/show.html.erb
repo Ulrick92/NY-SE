@@ -5,20 +5,11 @@
       <%= cl_image_tag @sock.photo, width: 400, height: 300, crop: :fill %>
     </div>
     <div class="col-sm-7">
-      <h3>Sock description</h3>
+      <h3>Sock description </h3>
       <p><%= @sock.description %></p>
-      <h4>Details</h4>
       <div class="detail-list">
         <ul>
-          <li><i class="fas fa-shoe-prints"></i> <%= @sock.size %></li>
-          <li><i class="fas fa-euro-sign"></i> <%= @sock.price %></li>
-          <li><i class="fas fa-palette"></i> <%= @sock.color %></li>
-          <li><i class="fas fa-leaf"></i> <%= @sock.cleanliness %></li>
-          <li><div class="btoun-bleu-cool">
-          <%= link_to "Buy", new_sock_transaction_path(@sock) %>
-          </div>
-          </li>
-          <li><a href="#" class="btn-treehouse">Buy</a></li>
+          <li> <h4 style="margin-top:5px">Details</h4> <i class="fas fa-shoe-prints"></i> <%= @sock.size %> <i class="fas fa-palette"></i> <%= @sock.color %> <i class="fas fa-leaf"></i> <%= @sock.cleanliness %> </li>
 
         </ul>
       </div>
@@ -27,8 +18,19 @@
          <ul>
             <li><i class="far fa-frown"></i></li>
             <li><%= render "/components/slidebar" %></li>
-            <li><i class="far fa-smile"></i></li>
+            <li> <i class="far fa-smile"></i></li>
+            <li>
+              <div style="margin-left:200px" >
+                <div style="text-align:center">
+                  <i class="fas fa-euro-sign"></i> <%= @sock.price %>
+                 </div>
+                 <div class="btoun-bleu-cool" id="buy" style="width:100px; text-align:center">
+                  <%= link_to "Buy", new_sock_transaction_path(@sock) %>
+                </div>
+
+            </li>
          </ul>
+
       </div>
     </div>
   </div>

@@ -13,6 +13,7 @@
   font-size: 50px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  margin-right: 30px;
 }
 .banner p {
   font-size: 25px;
@@ -22,9 +23,9 @@
   margin-bottom: 30px;
 }
 
-.container-home {
+.container-banner {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-item: center;
   width:1000px;
 }
@@ -94,3 +95,5 @@ li {
   h1 {
     margin-top: 40px;}
 }
+
+

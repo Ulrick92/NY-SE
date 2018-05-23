@@ -5,7 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-a = Sock.create!(
+Transaction.delete_all
+Sock.delete_all
+User.delete_all
+puts "Users and Socks and transactions deleted"
+
+
+michel = User.create!(
+  email: "michel@michel.com",
+  password: "password"
+  )
+
+
+puts 'user created'
+
+a = Sock.new(
   title: 'Nike noire',
   description: 'Nike noire gauche',
   size: 42,
@@ -17,8 +31,10 @@ a = Sock.create!(
   user_id: 1,
   location: "16 rue villa Gaudelet, Paris"
 )
+a.user = michel
+a.save
 
-b = Sock.create!(
+b = Sock.new(
   title: 'Nike grise',
   description: 'Nike noire droite',
   size: 42,
@@ -30,8 +46,10 @@ b = Sock.create!(
   user_id: 1,
   location: "14 rue Crespin du Gast, Paris"
 )
+b.user = michel
+b.save
 
-c = Sock.create!(
+c = Sock.new(
   title: 'Nike blanche',
   description: 'Nike blanche droite',
   size: 43,
@@ -43,8 +61,9 @@ c = Sock.create!(
   user_id: 1,
   location: "95 rue Oberkampf, Paris"
 )
+c.user = michel
 
-d = Sock.create!(
+d = Sock.new(
   title: 'Adidas blanche',
   description: 'Adidas blanche droite',
   size: 45,
@@ -56,9 +75,10 @@ d = Sock.create!(
   user_id: 1,
   location: "32 rue Saint-Maur, Paris"
 )
+d.user = michel
+d.save
 
-
-e = Sock.create!(
+e = Sock.new(
   title: 'Puma blanche',
   description: 'Puma blanche droite',
   size: 41,
@@ -70,8 +90,10 @@ e = Sock.create!(
   user_id: 1,
   location: "78 rue Parmentier, Paris"
 )
+e.user = michel
+e.save
 
-f = Sock.create!(
+f = Sock.new(
   title: 'Adidas Noire',
   description: 'Adidas noire droite',
   size: 43,
@@ -83,6 +105,8 @@ f = Sock.create!(
   user_id: 1,
   location: "55 avenue de la République, Paris"
 )
+f.user = michel
+f.save
 
 puts 'created Socks'
 

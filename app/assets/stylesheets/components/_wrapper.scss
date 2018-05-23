@@ -1,29 +1,46 @@
-.container {
-  margin: 0 auto;
-  width: 970px;
-}
+
 .wrapper {
   border-top: 8px solid rgba(47, 202, 171, 1.00);
   background-color: white;
   margin-top: 0px;
   margin-bottom: 15px;
-  height: 200px;
+  height: 300px;
   display: flex;
   align-items: center;
   position:relative;
-
 }
+
+.container-wrapper{
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    align-items: center;
+    width:100%;
+}
+
 .cards {
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 90px;
-  padding-bottom: 30px;
+  padding-bottom: 113px;
 }
 .icon {
-  width: 300px;
+  width: 250px;
   height: 30px;
   text-align: center;
+  margin:40px;
+}
+
+p {
+    font-size: 13px;
+    font-family: Helvetica;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 24px;
+    padding-top: 7px;
+    margin-bottom: 5px;
 }
 
 
