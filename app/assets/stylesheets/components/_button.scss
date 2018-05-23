@@ -1,0 +1,22 @@
+.btoun-bleu-cool {
+  position:absolute;
+  bottom:20px;
+  right:90px;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: rgba(64, 154, 215, 1.00);
+  border: 2px solid rgba(38, 132, 226, 1.00);
+  transition: background 0.3s ease;
+  font-size: 10px;
+  text-decoration: none;
+
+  &:hover {
+  opacity: 1;
+  background: rgba(38, 132, 226, 1.00);
+  text-decoration: none;
+  color: white;
+  }
+
+}
