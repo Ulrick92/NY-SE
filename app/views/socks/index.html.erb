@@ -2,11 +2,12 @@
   <h1>All socks</h1>
 </div>
 
-<div class="container">
+<div class="content-socks">
+<div class="card-container">
   <div class="row">
     <% @socks.each do |sock| %>
       <%= link_to sock_path(sock.id) do %>
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12 col-sm-4 col-md-4">
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= cl_image_path sock.photo %>');">
             <div class="card-category">New</div>
             <div class="card-description">
@@ -20,13 +21,8 @@
     <% end %>
   </div>
 </div>
+<div id="map" style="position: relative;" data-markers="<%= @markers.to_json %>"></div>
+</div>
 <div class="btn-container text-center">
   <%= link_to '+ Add a sock', new_sock_path, class: "btn btn-success btn-add " %>
 </div>
-
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-></div>

@@ -15,3 +15,5 @@ if (mapElement) {
     map.fitLatLngBounds(markers);
   }
 }
+
+console.log('Salut');
