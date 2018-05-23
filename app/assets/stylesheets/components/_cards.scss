@@ -53,6 +53,24 @@
   width: 970px;
   margin-top: 15px;
   margin-bottom: 15px;
-  height: 175px;
+  padding-bottom: 70px;
+  padding-top: 20px;
 }
 
+
+.container {
+  padding-bottom: 70px;
+  padding-top:20px;
+
+}
+
+.faux-carre {
+  width:250px;
+  height:175px;
+  display:flex;
+  vertical-align: center;
+  margin-top:20px;
+  margin: 15px;
+  align-items: center;
+  padding-left: 80px;
+}
