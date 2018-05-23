@@ -1,12 +1,32 @@
 <%= simple_form_for(@sock) do |f| %>
-  <%= f.input :title %>
+  <%= f.input :title, input_html: { class: 'input-sm' } %>
   <%= f.input :description %>
-  <%= f.input :size %>
-  <%= f.input :price %>
+  <div class="row">
+    <div class="col-xs-6">
+      <%= f.input :size %>
+    </div>
+    <div class="col-xs-6">
+      <%= f.input :price %>
+    </div>
+  </div>
   <%= f.input :shipping_method %>
-  <%= f.input :color %>
-  <%= f.input :cleanliness %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.submit %>
+  <div class="row">
+    <div class="col-xs-6">
+      <%= f.input :color %>
+    </div>
+    <div class="col-xs-6">
+      <div class = "slidebar-show">
+           <p>How clean is this sock?</p>
+           <ul>
+              <li><i class="far fa-frown"></i></li>
+              <li><%= render "/components/slidebar" %></li>
+              <li><i class="far fa-smile"></i></li>
+           </ul>
+        </div>
+        <%= f.input :cleanliness, as: :hidden %>
+    </div>
+  </div>
+  <%= f.input :photo, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+  <%= f.input :photo_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+  <%= f.button :submit, :class => 'btn btn-primary' %>
 <% end %>

@@ -18,8 +18,19 @@
           <%= link_to "Buy", new_sock_transaction_path(@sock) %>
           </div>
           </li>
+          <li><a href="#" class="btn-treehouse">Buy</a></li>
+
         </ul>
+      </div>
+      <div class = "slidebar-show">
+         <p>How clean is this sock?</p>
+         <ul>
+            <li><i class="far fa-frown"></i></li>
+            <li><%= render "/components/slidebar" %></li>
+            <li><i class="far fa-smile"></i></li>
+         </ul>
       </div>
     </div>
   </div>
 </div>
+

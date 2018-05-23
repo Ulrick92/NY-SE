@@ -5,20 +5,22 @@
 <div class="container">
   <div class="row">
     <% @socks.each do |sock| %>
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path sock.photo, height: 300, width: 400, crop: :fill %>');">
-        <div class="card-category">Popular</div>
-        <div class="card-description">
-          <h2><%= sock.title %></h2>
-          <p>sock.description</p>
+      <%= link_to sock_path(sock.id) do %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= cl_image_path sock.photo %>');">
+            <div class="card-category">New</div>
+            <div class="card-description">
+              <h2> <%= sock.title %></h2>
+              <p><%= sock.description %></p>
+            </div>
+            <img class="card-user" url="http://kitt.lewagon.com/placeholder/users/ssaunier" >
+          </div>
         </div>
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/juliepierre">
-        <a class="card-link" href="#" ></a>
-      </div>
-    </div>
+      <% end %>
     <% end %>
   </div>
 </div>
 <div class="btn-container text-center">
   <%= link_to '+ Add a sock', new_sock_path, class: "btn btn-success btn-add " %>
 </div>
+
