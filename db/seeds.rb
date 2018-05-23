@@ -27,7 +27,7 @@ a = Sock.new(
   shipping_method: 'domicile',
   color: 'Noire',
   cleanliness: 5,
-  remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/q_300/v1526994888/thought-catalog-470985-unsplash.jpg',
+  remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526994888/thought-catalog-470985-unsplash.jpg',
   user_id: 1,
   location: "16 rue villa Gaudelet, Paris"
 )
@@ -42,7 +42,7 @@ b = Sock.new(
   shipping_method: 'domicile',
   color: 'Noire',
   cleanliness: 5,
-  remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/q_300/v1526994889/yasin-hosgor-459740-unsplash.jpg',
+  remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526994889/yasin-hosgor-459740-unsplash.jpg',
   user_id: 1,
   location: "14 rue Crespin du Gast, Paris"
 )
@@ -57,7 +57,7 @@ c = Sock.new(
   shipping_method: 'domicile',
   color: 'Blanche',
   cleanliness: 5,
-  remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/q_300/v1526999126/jstzei2rn7dl9itsir0i.jpg',
+  remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526999126/jstzei2rn7dl9itsir0i.jpg',
   user_id: 1,
   location: "95 rue Oberkampf, Paris"
 )
@@ -71,7 +71,7 @@ d = Sock.new(
   shipping_method: 'domicile',
   color: 'Blanche',
   cleanliness: 2,
-  remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/q_300/v1526999040/xpcbu3qdzdgtrd1ki6s3.jpg',
+  remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526999040/xpcbu3qdzdgtrd1ki6s3.jpg',
   user_id: 1,
   location: "32 rue Saint-Maur, Paris"
 )
@@ -86,7 +86,7 @@ e = Sock.new(
   shipping_method: 'domicile',
   color: 'Blanche',
   cleanliness: 7,
-  remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/q_300/v1526998981/e90b6dl3rbteoid74m0x.jpg',
+  remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526998981/e90b6dl3rbteoid74m0x.jpg',
   user_id: 1,
   location: "78 rue Parmentier, Paris"
 )
@@ -101,7 +101,7 @@ f = Sock.new(
   shipping_method: 'domicile',
   color: 'noire',
   cleanliness: 10,
-  remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/q_300/v1526994888/thought-catalog-470985-unsplash.jpg',
+  remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526994888/thought-catalog-470985-unsplash.jpg',
   user_id: 1,
   location: "55 avenue de la République, Paris"
 )
