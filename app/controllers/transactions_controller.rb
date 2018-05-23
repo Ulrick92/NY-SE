@@ -1,16 +1,17 @@
 class TransactionsController < ApplicationController
-skip_before_action :authenticate_user!
 
   def new
     @sock = Sock.find(params[:sock_id])
     @transaction = Transaction.new
     authorize @transaction
+    authorize @sock
   end
 
 
 
   def create
     @transaction = Transaction.new(transaction_params)
+    @sock = Sock.find(params[:sock_id])
     # we need `sock_id` to asssociate transaction with corresponding restaurant
     @transaction.sock = Sock.find(params[:sock_id])
     @transaction.user = current_user
