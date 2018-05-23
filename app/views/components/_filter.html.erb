@@ -1,0 +1,14 @@
+<div class="container">
+  <h>Add filter on your research</h>
+  <div class="row">
+    <div class="col-xs-12">
+      <%= simple_form_for(@socks) do |f| %>
+      <%= f.input :color %>
+      <%= f.input :price_min %>
+      <%= f.input :price_max %>
+      <%= f.input :size %>
+      <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
