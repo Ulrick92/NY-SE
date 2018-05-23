@@ -1,27 +1,30 @@
 
-<div class="container">
-    <h3>All socks</h3>
-  <div class="row">
-    <% @socks.each do |sock| %>
-      <%= link_to sock_path(sock.id) do %>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= cl_image_path sock.photo %>');">
-            <div class="card-category">New</div>
-            <div class="card-description">
-              <h2> <%= sock.title %></h2>
-              <p><%= sock.description %></p>
+<div class="content-socks">
+  <div class="card-container">
+      <h3>All socks</h3>
+    <div class="row">
+      <% @socks.each do |sock| %>
+        <%= link_to sock_path(sock.id) do %>
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= cl_image_path sock.photo %>');">
+              <div class="card-category">New</div>
+              <div class="card-description">
+                <h2> <%= sock.title %></h2>
+                <p><%= sock.description %></p>
+              </div>
+              <img class="card-user" url="http://kitt.lewagon.com/placeholder/users/ssaunier" >
             </div>
-            <img class="card-user" url="http://kitt.lewagon.com/placeholder/users/ssaunier" >
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
-    <div class="col-xs-12 col-sm-4">
-      <div class="faux-carre">
-        <div class="btn-container text-center" >
-        <%= link_to '+ Add a sock', new_sock_path, class: "btoun-bleu-cool " %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="faux-carre">
+          <div class="btn-container text-center" >
+          <%= link_to '+ Add a sock', new_sock_path, class: "btoun-bleu-cool " %>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <div id="map" style="position: relative;" data-markers="<%= @markers.to_json %>"></div>
 </div>

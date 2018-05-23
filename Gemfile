@@ -35,3 +35,4 @@ gem 'devise'
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary'
 gem 'figaro'
+gem "geocoder"

@@ -1,0 +1,13 @@
+.content-socks{
+  display: flex;
+}
+.content-socks .card-container{
+  width:100%;
+}
+.content-socks #map {
+  flex: 0 0 450px;
+  height: 100vh;
+  position: sticky !important;
+  top: 0 !important;
+  overflow: hidden;
+}
