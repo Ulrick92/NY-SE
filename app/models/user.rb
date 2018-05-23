@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :socks, dependent: :destroy
   validates :email, uniqueness: true, presence: true
+  has_many :tansactions, dependent: :destroy
 end

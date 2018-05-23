@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_21_161500) do
+ActiveRecord::Schema.define(version: 2018_05_23_100159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,18 @@ ActiveRecord::Schema.define(version: 2018_05_21_161500) do
     t.index ["user_id"], name: "index_socks_on_user_id"
   end
 
+  create_table "transactions", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "sock_id"
+    t.string "statut"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "address"
+    t.string "pay_method"
+    t.index ["sock_id"], name: "index_transactions_on_sock_id"
+    t.index ["user_id"], name: "index_transactions_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -49,4 +61,6 @@ ActiveRecord::Schema.define(version: 2018_05_21_161500) do
   end
 
   add_foreign_key "socks", "users"
+  add_foreign_key "transactions", "socks"
+  add_foreign_key "transactions", "users"
 end
