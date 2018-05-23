@@ -6,6 +6,14 @@ class SocksController < ApplicationController
     @socks = policy_scope(Sock)
   end
 
+  def filter
+    # query_color = "color LIKE ?", "blanche"
+    # query_color =
+    # query_color = "color LIKE ?", "blanche"
+    # query_color = "color LIKE ?", "blanche"
+    # @socks =
+  end
+
   def show
   end
 
