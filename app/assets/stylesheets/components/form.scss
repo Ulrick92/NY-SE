@@ -1,0 +1,26 @@
+/*Form Create and Edit*/
+.container-form .form-content{
+  margin:0 auto;
+  float: none;
+  width: 100%;
+  max-width: 630px
+}
+.container-form h1{
+  text-align:center;
+}
+.container-form .simple_form .form-control-label{
+  font-size:14px;
+}
+
+/*Form User*/
+.container-form-user{
+  height: 100vh;
+}
+.container-form-user h2{
+  text-align:center;
+}
+.form-user {
+  width:100%;
+  max-width:360px;
+  margin:0 auto;
+}
