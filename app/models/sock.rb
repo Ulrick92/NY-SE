@@ -1,5 +1,6 @@
 class Sock < ApplicationRecord
   belongs_to :user
+  # has_one :transaction
   validates :title, presence: true
   validates :description, presence: true
   validates :size, presence: true
@@ -8,4 +9,5 @@ class Sock < ApplicationRecord
   validates :color, presence: true
   validates :cleanliness, inclusion: { in: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] }, numericality: {only_integer: true}
   mount_uploader :photo, PhotoUploader
+
 end

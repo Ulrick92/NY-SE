@@ -1,25 +1,35 @@
-<h1><%= @sock.title %></h1>
+<h2>Order resume</h2>
+
+
 <div class="sock-display">
   <div class="row">
-    <div class="col-sm-5">
-      <%= cl_image_tag @sock.photo, width: 400, height: 300, crop: :fill %>
+    <div class="col-sm-5" id=>
+      <div>
+        <p> <%= @sock.description %> </p>
+      </div>
+      <div> <%= cl_image_tag @sock.photo, width: 200, height: 100, crop: :fill %>
+    </div>
     </div>
     <div class="col-sm-7">
-      <h3>Sock description</h3>
-      <p><%= @sock.description %></p>
-      <h4>Details</h4>
+      <p> <%= @sock.description %></p>
       <div class="detail-list">
         <ul>
           <li><i class="fas fa-shoe-prints"></i> <%= @sock.size %></li>
           <li><i class="fas fa-euro-sign"></i> <%= @sock.price %></li>
           <li><i class="fas fa-palette"></i> <%= @sock.color %></li>
           <li><i class="fas fa-leaf"></i> <%= @sock.cleanliness %></li>
-          <li><div class="btoun-bleu-cool">
-          <%= link_to "Buy", new_sock_transaction_path(@sock) %>
           </div>
           </li>
         </ul>
       </div>
     </div>
   </div>
+</div>
+<h1>Enter your informations</h1>
+<div>
+<%= simple_form_for [@sock,@transaction] do |f| %>
+ <%= f.input :address %>
+ <%= f.input :pay_method %>
+ <%= f.submit %>
+<% end %>
 </div>
