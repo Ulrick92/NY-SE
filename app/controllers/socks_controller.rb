@@ -2,16 +2,20 @@ class SocksController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_sock, only:[:show, :edit, :update, :destroy]
 
-  def index
-    @socks = policy_scope(Sock)
+    def index
+    @socks = policy_scope(Sock).where.not(latitude: nil, longitude: nil)
+
+    @markers = @socks.map do |sock|
+      {
+        lat: sock.latitude,
+        lng: sock.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
   def filter
-    # query_color = "color LIKE ?", "blanche"
-    # query_color =
-    # query_color = "color LIKE ?", "blanche"
-    # query_color = "color LIKE ?", "blanche"
-    # @socks =
+
   end
 
   def show

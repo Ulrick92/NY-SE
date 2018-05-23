@@ -9,5 +9,6 @@ class Sock < ApplicationRecord
   validates :color, presence: true
   validates :cleanliness, inclusion: { in: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] }, numericality: {only_integer: true}
   mount_uploader :photo, PhotoUploader
-
+  geocoded_by :location
+  after_validation :geocode
 end
