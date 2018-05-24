@@ -9,5 +9,7 @@ class TransactionPolicy < ApplicationPolicy
     return true
   end
 
-
+  def confirm?
+    return true
+  end
 end

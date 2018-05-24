@@ -6,7 +6,12 @@ class TransactionsController < ApplicationController
     authorize @transaction
   end
 
-
+  def confirm
+    @sock = Sock.find(params[:sock_id])
+    @transaction = Transaction.new(transaction_params)
+    @transaction.sock = Sock.find(params[:sock_id])
+    authorize @transaction
+  end
 
   def create
     @transaction = Transaction.new(transaction_params)
