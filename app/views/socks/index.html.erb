@@ -1,18 +1,19 @@
 
 <div class="content-socks">
+
   <div class="card-container">
     <div class="filter">
-
+      <p style="font-size:14px;font-weight: bold;"> Filter socks :</p>
     <%= form_tag socks_path, method: :get do %>
-      <%= select_tag :color, options_for_select(Sock::COLORS, selected: params[:color]), prompt: "Filter by color" %>
-      <%= select_tag :size, options_for_select(Sock::SIZES, selected: params[:color]), prompt: "Filter by size" %>
-      <%= button_to :submit, :class => 'btn btn-primary'  %>
+      <%= select_tag :color, options_for_select(Sock::COLORS, selected: params[:color]), prompt: "Filter by color", class: 'dropdown btn btn-secondary dropdown-toggle dropdown-filter', style:'font-size:14px'%>
+      <%= select_tag :size, options_for_select(Sock::SIZES, selected: params[:size]), prompt: "Filter by size", class: 'dropdown btn btn-secondary dropdown-toggle dropdown-filter', style:'font-size:14px' %>
+      <div class='submit-boutton-filter', style="display: none;">
+        <%= button_to :submit %>
+      </div>
     <% end %>
-
-
     </div>
 
-    <div class="row">
+    <div class="row" style="margin-left: 21px; margin-right: 15px;">
       <% @socks.each do |sock| %>
         <%= link_to sock_path(sock.id) do %>
           <div class="col-xs-12 col-sm-4 col-md-4">

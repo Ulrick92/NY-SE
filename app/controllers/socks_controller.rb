@@ -41,7 +41,6 @@ class SocksController < ApplicationController
   end
 
   def create
-    raise
     @sock = Sock.new(sock_params)
     @sock.user = current_user
     authorize @sock

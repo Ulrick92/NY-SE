@@ -106,11 +106,13 @@
   color: white;
 }
 
-.navbar-wagon .form-control {
-border-radius: 50px;
+.navbar-form {
+flex:1 0 auto;
+border-radius: 100px;
 padding: 10px 15px;
 font-size: 18px;
 font-size: 14px;
+margin-left: 30px;
 }
 
 /* Build your own button classes ! */
