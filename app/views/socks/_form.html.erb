@@ -3,7 +3,7 @@
   <%= f.input :description %>
   <div class="row">
     <div class="col-xs-6">
-      <%= f.input :size %>
+      <%= f.input :size, as: :select, collection: Sock::SIZES, input_html: { prompt: "Filter by size" } %>
     </div>
     <div class="col-xs-6">
       <%= f.input :price %>
@@ -12,7 +12,7 @@
   <%= f.input :shipping_method, as: :radio_buttons, collection: ["Delivery", "Relay"], input_html: { class: 'shipping-method' }, wrapper_html: { class: 'form-inline' } %>
   <div class="row">
     <div class="col-xs-6">
-      <%= f.input :color %>
+      <%= f.input :color, as: :select, collection: Sock::COLORS %>
     </div>
     <div class="col-xs-6">
       <div class = "slidebar-show">
