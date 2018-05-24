@@ -1,34 +1,33 @@
-<h1><%= @sock.title %></h1>
-<div class="sock-display">
-  <div class="row">
-    <div class="col-sm-5">
-      <%= cl_image_tag @sock.photo, width: 400, height: 300, crop: :fill %>
-    </div>
-    <div class="col-sm-7">
-      <h3>Sock description </h3>
-      <p><%= @sock.description %></p>
-      <div class="detail-list">
-        <ul>
-          <li> <h4 style="margin-top:5px">Details</h4> <i class="fas fa-shoe-prints"></i> <%= @sock.size %> <i class="fas fa-palette"></i> <%= @sock.color %> <i class="fas fa-leaf"></i> <%= @sock.cleanliness %> </li>
-
-        </ul>
+<div class="img-product" style="background: url('<%= @sock.photo %>')center center; background-size: cover;"></div>
+<div class="sock-detail-container">
+  <div class="sock-display">
+    <div>
+      <h1><%= @sock.title %></h1>
+      <div class="sock-features">
+        <div class="item">
+          <div><i class="fas fa-shoe-prints"></i> <%= @sock.size %></div>
+        </div>
+        <div class="item">
+          <div><i class="fas fa-palette"></i> <%= @sock.color %></div>
+        </div>
       </div>
       <div class = "slidebar-show">
-         <p>How clean is this sock?</p>
+         <h2>Clean</h2>
          <ul>
             <li><i class="far fa-frown"></i></li>
             <li><%= render "/components/slidebar" %></li>
             <li> <i class="far fa-smile"></i></li>
-            <li>
-              <div style="margin-left:200px" >
-                <div style="text-align:center">
-                  <i class="fas fa-euro-sign"></i> <%= @sock.price_per_day %>
-                 </div>
-            </li>
          </ul>
-        <%= render "form_booking" %>
+      </div>
+      <div class="sock-description">
+        <h2>Description</h2>
+        <p><%= @sock.description %></p>
       </div>
     </div>
   </div>
+  <div class="sock-booking">
+    <div>
+      <%= render "form_booking" %>
+    </div>
+  </div>
 </div>
-
