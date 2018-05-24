@@ -7,7 +7,6 @@ class Sock < ApplicationRecord
   validates :price_per_day, presence: true
   SIZES = (35..47).to_a
   validates :size, inclusion: { in: SIZES }
-  validates :price, presence: true
   validates :shipping_method, presence: true
   COLORS = %w(white black red blue green yellow purple orange pink gray marron)
   validates :color, inclusion: { in: COLORS }

@@ -13,12 +13,8 @@
   <div class="button-wrap">.
     <input type="radio" name="radio" id="yes-button" class="hidden radio-label" value="<%= @sock.shipping_method %>" checked>
     <%= f.input :shipping_method, as: :radio %>
-    <label for="yes-button" class="button-label-delivery">
-      <h1>Delivery</h1>
-    </label>
+    <label for="yes-button" class="button-label-delivery"><h1>Delivery</h1></label>
     <%= f.input :shipping_method, as: :radio %>
-    <label for="no-button" class="button-label-pickup">
-      <h1>Pickup</h1>
-    </label>
+    <label for="no-button" class="button-label-pickup"><h1>Pickup</h1></label>
   </div>
 </div>
