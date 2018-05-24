@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :socks, dependent: :destroy
   validates :email, uniqueness: true, presence: true
-  has_many :tansactions, dependent: :destroy
+  has_many :transactions, dependent: :destroy
   mount_uploader :photo, PhotoUploader
 end

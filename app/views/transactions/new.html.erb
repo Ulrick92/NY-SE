@@ -27,7 +27,7 @@
 </div>
 <h1>Enter your informations</h1>
 <div>
-<%= simple_form_for [@sock,@transaction] do |f| %>
+<%= simple_form_for [@sock,@transaction], url: new_sock_transaction_path(@sock) do |f| %>
  <%= f.input :address %>
  <%= f.input :pay_method %>
  <%= f.submit %>
