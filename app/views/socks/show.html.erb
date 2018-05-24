@@ -22,15 +22,13 @@
             <li>
               <div style="margin-left:200px" >
                 <div style="text-align:center">
-                  <i class="fas fa-euro-sign"></i> <%= @sock.price %>
+                  <i class="fas fa-euro-sign"></i> <%= @sock.price_per_day %>
                  </div>
-                 <div class="btoun-bleu-cool" id="buy" style="width:100px; text-align:center">
-                  <%= link_to "Buy", new_sock_transaction_path(@sock) %>
-                </div>
 
             </li>
          </ul>
 
+        <%= render "form_booking" %>
       </div>
     </div>
   </div>

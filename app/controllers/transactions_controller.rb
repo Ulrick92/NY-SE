@@ -29,7 +29,7 @@ class TransactionsController < ApplicationController
   private
 
   def transaction_params
-    params.require(:transaction).permit(:sock_id, :address, :pay_method)
+    params.require(:transaction).permit(:sock_id, :address, :pay_method, :starts_on, :ends_on)
   end
 
 end

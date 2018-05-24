@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_23_113652) do
+ActiveRecord::Schema.define(version: 2018_05_24_090952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2018_05_23_113652) do
     t.bigint "user_id"
     t.integer "size"
     t.string "color"
-    t.integer "price"
     t.text "shipping_method"
     t.text "location"
     t.string "photo"
@@ -30,6 +29,7 @@ ActiveRecord::Schema.define(version: 2018_05_23_113652) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.integer "price_per_day"
     t.index ["user_id"], name: "index_socks_on_user_id"
   end
 
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2018_05_23_113652) do
     t.datetime "updated_at", null: false
     t.string "address"
     t.string "pay_method"
+    t.date "starts_on"
+    t.date "ends_on"
     t.index ["sock_id"], name: "index_transactions_on_sock_id"
     t.index ["user_id"], name: "index_transactions_on_user_id"
   end
