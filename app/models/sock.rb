@@ -3,6 +3,8 @@ class Sock < ApplicationRecord
   # has_one :transaction
   validates :title, presence: true
   validates :description, presence: true
+  validates :size, presence: true
+  validates :price_per_day, presence: true
   SIZES = (35..47).to_a
   validates :size, inclusion: { in: SIZES }
   validates :price, presence: true

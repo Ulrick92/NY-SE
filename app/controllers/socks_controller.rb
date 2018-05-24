@@ -32,6 +32,7 @@ class SocksController < ApplicationController
   end
 
   def show
+    @transaction = Transaction.new
   end
 
   def new
@@ -73,6 +74,6 @@ class SocksController < ApplicationController
   end
 
   def sock_params
-    params.require(:sock).permit(:size, :color, :price, :shipping_method, :location, :photo, :description, :cleanliness, :title)
+    params.require(:sock).permit(:size, :color, :price_per_day, :shipping_method, :location, :photo, :description, :cleanliness, :title)
   end
 end

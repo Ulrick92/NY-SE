@@ -6,7 +6,12 @@ class TransactionsController < ApplicationController
     authorize @transaction
   end
 
-
+  def confirm
+    @sock = Sock.find(params[:sock_id])
+    @transaction = Transaction.new(transaction_params)
+    @transaction.sock = Sock.find(params[:sock_id])
+    authorize @transaction
+  end
 
   def create
     @transaction = Transaction.new(transaction_params)
@@ -29,7 +34,7 @@ class TransactionsController < ApplicationController
   private
 
   def transaction_params
-    params.require(:transaction).permit(:sock_id, :address, :pay_method)
+    params.require(:transaction).permit(:sock_id, :address, :pay_method, :starts_on, :ends_on)
   end
 
 end
