@@ -1,10 +1,14 @@
 .img-product{
   height:368px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
 }
 .sock-detail-container{
   display:flex;
   max-width: 1080px;
-  padding:0 24px 25px;
+  padding:25px 24px;
   margin:0 97px;
 }
 .sock-display, .sock-booking{
@@ -12,11 +16,10 @@
   display: flex;
   justify-content: center;
 }
-.sock-booking{
-  padding:25px 0 0;
-}
 h1 {
-  font-size:32px;
+  margin:0;
+  text-transform: uppercase;
+  font-weight:lighter;
 }
 h2 {
   font-size:28px;

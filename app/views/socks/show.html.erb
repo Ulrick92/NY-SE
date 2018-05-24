@@ -1,8 +1,7 @@
-<div class="img-product" style="background: url('<%= @sock.photo %>')center center; background-size: cover;"></div>
+<div class="img-product" style="background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url('<%= @sock.photo %>')center center; background-size: cover;"><h1><%= @sock.title %></h1></div>
 <div class="sock-detail-container">
   <div class="sock-display">
     <div>
-      <h1><%= @sock.title %></h1>
       <div class="sock-features">
         <div class="item">
           <div><i class="fas fa-shoe-prints"></i> <%= @sock.size %></div>
