@@ -1,7 +1,17 @@
 
 <div class="content-socks">
   <div class="card-container">
-      <h3>All socks</h3>
+    <div class="filter">
+
+    <%= form_tag socks_path, method: :get do %>
+      <%= select_tag :color, options_for_select(Sock::COLORS, selected: params[:color]), prompt: "Filter by color" %>
+      <%= select_tag :size, options_for_select(Sock::SIZES, selected: params[:color]), prompt: "Filter by size" %>
+      <%= button_to :submit, :class => 'btn btn-primary'  %>
+    <% end %>
+
+
+    </div>
+
     <div class="row">
       <% @socks.each do |sock| %>
         <%= link_to sock_path(sock.id) do %>

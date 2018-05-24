@@ -14,12 +14,17 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-      <%= link_to " + Create an add ", new_sock_path, class: "btoun-rose-cool navbar-wagon-link" %>
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
       <%= link_to "My orders", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "My socks", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <%= link_to "Discover all socks", socks_path, class: "btoun-bleu-cool navbar-wagon-link"%>
+
+      <%= link_to " + Create an add ", new_sock_path, class: "btoun-rose-cool navbar-wagon-link" %>
+
+
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">

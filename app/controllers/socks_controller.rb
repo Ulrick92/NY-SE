@@ -2,8 +2,21 @@ class SocksController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_sock, only:[:show, :edit, :update, :destroy]
 
-    def index
-    @socks = policy_scope(Sock).where.not(latitude: nil, longitude: nil)
+  def index
+    if params[:size].present?
+      @socks = policy_scope(Sock).where(size: params[:size])
+
+    elsif params[:color].present?
+      @socks = policy_scope(Sock).where(color: params[:color])
+
+    elsif params[:size].present? && params[:color].present?
+      @socks = policy_scope(Sock).where(size: params[:size], color: params[:color])
+
+    else
+      @socks = policy_scope(Sock).all
+    end
+
+    @socks = @socks.where.not(latitude: nil, longitude: nil)
 
     @markers = @socks.map do |sock|
       {
@@ -28,6 +41,7 @@ class SocksController < ApplicationController
   end
 
   def create
+    raise
     @sock = Sock.new(sock_params)
     @sock.user = current_user
     authorize @sock

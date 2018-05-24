@@ -55,15 +55,16 @@
 }
 
 .btoun-rose-cool {
-  color: white;
+  color: rgba(246, 97, 76, 1.00);
   padding: 10px 15px;
   border-radius: 4px;
   font-weight: bold;
-  background: rgba(246, 120, 102, 1.00);
+  background: rgba(246, 97, 76, 0.00);
   border: 2px solid rgba(246, 97, 76, 1.00);
   transition: background 0.3s ease;
   font-size: 10px;
   text-decoration: none;
+  margin-left: 30px;
 
   &:hover {
   opacity: 1;

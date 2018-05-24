@@ -3,10 +3,12 @@
   margin:0 auto;
   float: none;
   width: 100%;
-  max-width: 630px
+  max-width: 630px;
+  margin-bottom:100px;
 }
 .container-form h1{
   text-align:center;
+
 }
 .container-form .simple_form .form-control-label{
   font-size:14px;
@@ -23,4 +25,11 @@
   width:100%;
   max-width:360px;
   margin:0 auto;
+}
+
+
+.container-form {
+  height: 100%;
+  min-height: 100%;
+  margin: 0 auto;
 }

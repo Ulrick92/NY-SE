@@ -14,7 +14,7 @@ puts "Users and Socks and transactions deleted"
 michel = User.create!(
   email: "michel@michel.com",
   password: "password"
-  )
+)
 
 
 puts 'user created'
@@ -25,14 +25,14 @@ a = Sock.new(
   size: 42,
   price_per_day: 4,
   shipping_method: 'domicile',
-  color: 'Noire',
+  color: 'black',
   cleanliness: 5,
   remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526994888/thought-catalog-470985-unsplash.jpg',
   user_id: 1,
   location: "16 rue villa Gaudelet, Paris"
 )
 a.user = michel
-a.save
+a.save!
 
 b = Sock.new(
   title: 'Nike grise',
@@ -40,14 +40,14 @@ b = Sock.new(
   size: 42,
   price_per_day: 4,
   shipping_method: 'domicile',
-  color: 'Noire',
+  color: 'green',
   cleanliness: 5,
   remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526994889/yasin-hosgor-459740-unsplash.jpg',
   user_id: 1,
   location: "14 rue Crespin du Gast, Paris"
 )
 b.user = michel
-b.save
+b.save!
 
 c = Sock.new(
   title: 'Nike blanche',
@@ -55,13 +55,14 @@ c = Sock.new(
   size: 43,
   price_per_day: 5,
   shipping_method: 'domicile',
-  color: 'Blanche',
+  color: 'red',
   cleanliness: 5,
   remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526999126/jstzei2rn7dl9itsir0i.jpg',
   user_id: 1,
   location: "95 rue Oberkampf, Paris"
 )
 c.user = michel
+c.save!
 
 d = Sock.new(
   title: 'Adidas blanche',
@@ -69,14 +70,14 @@ d = Sock.new(
   size: 45,
   price_per_day: 10,
   shipping_method: 'domicile',
-  color: 'Blanche',
+  color: 'white',
   cleanliness: 2,
   remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526999040/xpcbu3qdzdgtrd1ki6s3.jpg',
   user_id: 1,
   location: "32 rue Saint-Maur, Paris"
 )
 d.user = michel
-d.save
+d.save!
 
 e = Sock.new(
   title: 'Puma blanche',
@@ -84,14 +85,14 @@ e = Sock.new(
   size: 41,
   price_per_day: 8,
   shipping_method: 'domicile',
-  color: 'Blanche',
+  color: 'blue',
   cleanliness: 7,
   remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526998981/e90b6dl3rbteoid74m0x.jpg',
   user_id: 1,
   location: "78 rue Parmentier, Paris"
 )
 e.user = michel
-e.save
+e.save!
 
 f = Sock.new(
   title: 'Adidas Noire',
@@ -99,14 +100,14 @@ f = Sock.new(
   size: 43,
   price_per_day: 4,
   shipping_method: 'domicile',
-  color: 'noire',
+  color: 'gray',
   cleanliness: 10,
   remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526994888/thought-catalog-470985-unsplash.jpg',
   user_id: 1,
   location: "55 avenue de la République, Paris"
 )
 f.user = michel
-f.save
+f.save!
 
 puts 'created Socks'
 

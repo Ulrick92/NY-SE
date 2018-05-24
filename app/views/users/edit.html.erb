@@ -1,0 +1,10 @@
+<h1>Users#edit</h1>
+
+
+<%= simple_form_for(@user) do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :photo, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+  <%= f.input :photo_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+  <%= f.button :submit, :class => 'btn btn-primary' %>
+<% end %>
