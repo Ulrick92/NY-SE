@@ -1,0 +1,92 @@
+
+.text-center {
+ text-align: center;
+}
+.container {
+ max-width: 900px;
+ margin: 50px auto;
+}
+
+img{
+ vertical-align: middle;
+ max-width: 100%;
+ height: auto;
+}
+.message-profile{
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ overflow: hidden;
+}
+
+*{
+ box-sizing: border-box;
+}
+p{
+ margin: 0;
+}
+.inbox {
+ margin:0;
+ list-style: none;
+ padding:0 20px;
+ border: 1px solid #DCE0E0;
+}
+.message {
+ padding:20px;
+ border-bottom: 1px solid #DCE0E0;
+ display: flex;
+ align-items: center;
+ font-size:14px;
+}
+.message:last-child {
+ border:0;
+}
+.message .message-text {
+ flex-grow: 1;
+}
+.message .message-detail, .message .message-text {
+ padding: 0 0 0 8px;
+}
+.message .message-detail{
+ width: 100%;
+ max-width:125px;
+}
+.message .message-statut {
+ width: 100%;
+ max-width:90px;
+ font-weight: bold;
+ padding:0 0 0 8px;
+}
+.message .message-statut .statut{
+ color: #D3D3D3;
+ margin:0 0 10px;
+}
+.message .statut.valid{
+ color: #5DAE5D;
+}
+.message .statut.refused{
+ color: #FF0808;
+}
+.message .date,.message p {
+ margin:6px 0 0;
+}
+
+.tabs button {
+ background: none;
+ border: 0;
+ font-family: 'Varela Round', sans-serif;
+ font-weight: bold;
+ font-size:18px;
+ padding-bottom:10px;
+ margin: 0 10px 0 0;
+ color: #dddddd;
+}
+
+.tabs .active, .tabs button:hover{
+ border-bottom: 4px solid #D23333;
+ color:#000;
+}
+
+.tabs button:focus {
+ outline:0;
+}
