@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :socks, dependent: :destroy
   validates :email, uniqueness: true, presence: true
   has_many :tansactions, dependent: :destroy
+  mount_uploader :photo, PhotoUploader
 end
