@@ -1,13 +1,35 @@
-.sock-display {
-justify-content: space-around;
-background: white;
-padding: 30px;
-border-radius: 4px;
-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-border: 1px solid rgba(0, 0, 0, 0.1);
+.img-product{
+  height:368px;
+}
+.sock-detail-container{
+  display:flex;
+  max-width: 1080px;
+  padding:0 24px 25px;
+  margin:0 97px;
+}
+.sock-display, .sock-booking{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.sock-booking{
+  padding:25px 0 0;
 }
 h1 {
-  margin-left: 34px;
+  font-size:32px;
+}
+h2 {
+  font-size:28px;
+}
+.sock-features, .slidebar-show{
+  margin:0 0 24px;
+}
+.sock-features .item{
+  display:inline-block;
+  margin:0 16px 0 0;
+}
+.sock-features .item:last{
+  margin:0;
 }
 li {
   display: inline-block;
@@ -32,7 +54,4 @@ ul {
   background: #B5E0D6;
   text-decoration: none;
   color: white;
-}
-h4 {
-  margin-top: 50px;
 }
