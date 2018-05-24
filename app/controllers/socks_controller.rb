@@ -9,6 +9,9 @@ class SocksController < ApplicationController
     elsif params[:color].present?
       @socks = policy_scope(Sock).where(color: params[:color])
 
+    elsif params[:query].present?
+      @socks = policy_scope(Sock).where("location ILIKE ?", "%#{params[:query]}%")
+
     elsif params[:size].present? && params[:color].present?
       @socks = policy_scope(Sock).where(size: params[:size], color: params[:color])
 

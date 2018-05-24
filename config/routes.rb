@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'users/:id', to: 'users#show', as: :user
   root to: 'pages#home'
   get '/dashboard', to: 'pages#dashboard', as: :dashboard
+  patch '/transactions/:id/validate', to: 'pages#validates_user', as: :validates
+  patch '/transactions/:id/refuse', to: 'pages#refuses_user', as: :refuses
 
   resources :socks do
     resources :transactions, only: [ :new, :create, :show, :edit, :update ]

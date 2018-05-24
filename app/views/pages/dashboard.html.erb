@@ -3,11 +3,11 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6">
-      <%= cl_image_tag(@user.photo, width: 100, :transformation=>[
+      <%= cl_image_tag(current_user.photo, width: 100, :transformation=>[
   {:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"crop"},
   {:width=>200, :crop=>"scale"}
-  ]) %>
-      <h4><%= @user.first_name %> <%= @user.last_name %> </h4>
+  ], style:"border-radius: 50%") %>
+      <h4><%= current_user.first_name %> <%= current_user.last_name %> </h4>
     </div>
     <div class="col-xs-12 col-sm-6">
       <div class="add">
@@ -24,44 +24,45 @@
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#home">My socks</a></li>
     <li><a data-toggle="tab" href="#menu1">My bookings</a></li>
-  </ul>
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
-      <h3>My socks</h3>
-      <div class="container">
-        <div class="row">
-          <% @my_socks.each do |sock| %>
-          <%= link_to sock_path(sock.id) do %>
-            <div class="col-xs-12 col-sm-4">
-              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= cl_image_path sock.photo %>');">
-                <div class="card-category">New</div>
-                <div class="card-description">
-                  <h2> <%= sock.title %></h2>
-                  <p><%= sock.description %></p>
-                </div>
-                <img class="card-user" url="http://kitt.lewagon.com/placeholder/users/ssaunier" >
+      <ul class="inbox">
+        <% @my_socks.each do |sock| %>
+          <li class="message">
+              <div class="message-profile flex-item"><%= cl_image_tag(sock.user.photo) %></div>
+              <div class="message-detail flex-item">
+                <div class="name"><strong><%= sock.user.email %></strong></div>
               </div>
-            </div>
-          <% end %>
+              <div class="message-text">
+                <strong> <%= sock.shipping_method %> </strong>
+              </div>
+              <div class="message-statut flex-item">
+                <%= link_to 'Accept', validates_path(sock), method: :patch, class: 'btn btn-success' %>
+                <%= link_to 'Decline', refuses_path(sock), method: :patch, class: 'btn btn-danger' %>
+              </div>
+            </li>
         <% end %>
-        </div>
-      </div>
-    </div>
+      </ul>    </div>
     <div id="menu1" class="tab-pane fade">
-      <h3>My bookings</h3>
-      <ul>
+      <ul class="inbox">
         <% @my_transactions.each do |transaction| %>
-          <li><%= transaction.sock.title %>
-            <div class="btn btn-success">
-              Accept
-            </div>
-            <div class="btn btn-danger">
-              Decline
-            </div>
-          </li>
+          <li class="message">
+              <div class="message-profile flex-item"><%= cl_image_tag(transaction.user.photo) %></div>
+              <div class="message-detail flex-item">
+                <div class="name"><strong><%= transaction.user.email %></strong></div>
+                <div class="date"><%= transaction.starts_on %></div>
+                <div class="date"><%= transaction.ends_on %></div>
+              </div>
+              <div class="message-text">
+                <strong> <%= transaction.sock.shipping_method %> </strong>
+              </div>
+              <div class="message-statut flex-item">
+                <div class="statut"><%= transaction.statut %></div>
+                <div class="price"> <%= transaction.sock.price_per_day %></div>
+              </div>
+            </li>
         <% end %>
       </ul>
     </div>
   </div>
 </div>
-

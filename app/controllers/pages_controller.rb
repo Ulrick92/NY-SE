@@ -12,4 +12,20 @@ class PagesController < ApplicationController
     @all_transactions = policy_scope(Transaction)
     @my_transactions = Transaction.where(user_id: current_user.id)
   end
+
+    def validates_user
+     @transaction = Transaction.find(sock_id: params[:id])
+     @transaction.statut = "Accepted"
+     @transaction.save
+     redirect_to dashboard_path
+   end
+
+   # NOT IN USE
+   def refuses_user
+    raise
+     @transaction = Transaction.find(params[:id])
+     @transaction.statut = "Declined"
+     @transaction.save
+     redirect_to dashboard_path
+   end
 end

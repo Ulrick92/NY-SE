@@ -14,4 +14,11 @@ class Sock < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   geocoded_by :location
   after_validation :geocode
+
+  include PgSearch
+  pg_search_scope :search_by_location,
+    against: [ :location],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end
