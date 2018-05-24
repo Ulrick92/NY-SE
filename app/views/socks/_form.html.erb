@@ -9,7 +9,19 @@
       <%= f.input :price %>
     </div>
   </div>
-  <%= f.input :shipping_method, as: :radio_buttons, collection: ["Delivery", "Relay"], input_html: { class: 'shipping-method' }, wrapper_html: { class: 'form-inline' } %>
+  <%# render '/components/radiobutton' %>
+  <div classe="container-radio">
+    <p style="font-size: 15px;font-weight:bold">Delivery Options</P>
+    <div class="button-wrap">
+      <label for="yes-button" class="button-label">
+        <h1>Delivery</h1>
+      </label>
+      <label for="no-button" class="button-label">
+        <h1>PickUp</h1>
+      </label>
+    </div>
+  </div>
+  <%= f.input :shipping_method, as: :hidden %>
   <div class="row">
     <div class="col-xs-6">
       <%= f.input :color, as: :select, collection: Sock::COLORS %>
