@@ -53,6 +53,8 @@ class SocksController < ApplicationController
 
   def edit
     @user = current_user
+    @sock = Sock.find(params[:id])
+    authorize @sock
   end
 
   def update

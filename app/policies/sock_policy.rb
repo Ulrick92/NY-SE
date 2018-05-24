@@ -12,9 +12,7 @@ class SockPolicy < ApplicationPolicy
   def update?
     return true
   end
-  def update?
-    is_user_current?
-  end
+
 
   def destroy?
     is_user_current?
