@@ -1,5 +1,4 @@
 class TransactionsController < ApplicationController
-skip_before_action :authenticate_user!
 
   def new
     @sock = Sock.find(params[:sock_id])
