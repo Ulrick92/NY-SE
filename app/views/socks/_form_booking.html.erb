@@ -1,4 +1,4 @@
-<%= simple_form_for [@sock, @transaction], url: sock_confirm_path(@sock) do |f| %>
+<%= simple_form_for [@sock, @transaction] do |f| %>
   <%= f.input :starts_on, as: :string, required: false, input_html: {class: "datepicker"} %>
   <%= f.input :ends_on, as: :string, required: false, as: :string, input_html: {class: "datepicker"} %>
   <%= f.button :submit,:class => 'btn btn-primary' %>

@@ -6,24 +6,37 @@ class TransactionsController < ApplicationController
     authorize @transaction
   end
 
-  def confirm
-    @sock = Sock.find(params[:sock_id])
-    @transaction = Transaction.new(transaction_params)
-    @transaction.sock = Sock.find(params[:sock_id])
-    authorize @transaction
-  end
+  # def confirm
+  #   @transaction = Transaction.find(params[:id])
+  #   authorize @transaction
+  #   @transaction.save
+  # end
 
   def create
+    @sock = Sock.find(params[:sock_id])
     @transaction = Transaction.new(transaction_params)
     # we need `sock_id` to asssociate transaction with corresponding restaurant
     @transaction.sock = Sock.find(params[:sock_id])
     @transaction.user = current_user
     authorize @transaction
     if @transaction.save
-      redirect_to sock_transaction_path(@transaction.sock_id, @transaction)
+      redirect_to edit_sock_transaction_path(@transaction.sock_id, @transaction)
     else
       render "new"
     end
+  end
+
+  def edit
+    @transaction = Transaction.find(params[:id])
+    @sock = Sock.find(params[:sock_id])
+    authorize @transaction
+  end
+
+  def update
+    @transaction = Transaction.find(params[:id])
+    @transaction.update(transaction_params)
+    authorize @transaction
+    redirect_to sock_transaction_path(@transaction)
   end
 
   def show
