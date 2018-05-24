@@ -11,7 +11,7 @@
   </div>
   <%# render '/components/radiobutton' %>
   <div classe="container-radio">
-    <p style="font-size: 15px;font-weight:bold">Delivery Options</P>
+    <p style="font-size: 15px;font-weight:bold">Delivery Options</p>
     <div class="button-wrap">
       <label for="yes-button" class="button-label">
         <h1>Delivery</h1>
@@ -22,22 +22,16 @@
     </div>
   </div>
   <%= f.input :shipping_method, as: :hidden %>
-  <div class="row">
-    <div class="col-xs-6">
-      <%= f.input :color, as: :select, collection: Sock::COLORS %>
-    </div>
-    <div class="col-xs-6">
-      <div class = "slidebar-show">
-           <p>How clean is this sock?</p>
-           <ul>
-              <li><i class="far fa-frown"></i></li>
-              <li><%= render "/components/slidebar" %></li>
-              <li><i class="far fa-smile"></i></li>
-           </ul>
-        </div>
-        <%= f.input :cleanliness, as: :hidden %>
-    </div>
+  <%= f.input :color, as: :select, collection: Sock::COLORS %>
+  <div class = "slidebar-show">
+    <p>How clean is this sock?</p>
+    <ul>
+      <li><i class="far fa-frown"></i></li>
+      <li><%= render "/components/slidebar" %></li>
+      <li><i class="far fa-smile"></i></li>
+    </ul>
   </div>
+  <%= f.input :cleanliness, as: :hidden %>
   <%= f.input :photo, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
   <%= f.input :photo_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
   <%= f.button :submit, :class => 'btn btn-primary' %>
