@@ -5,6 +5,11 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @socks = policy_scope(Sock).where(user_id = current_user.id)
+    @user = current_user
+    @all_socks = policy_scope(Sock)
+    @my_socks = Sock.where(user_id: current_user.id)
+
+    @all_transactions = policy_scope(Transaction)
+    @my_transactions = Transaction.where(user_id: current_user.id)
   end
 end
