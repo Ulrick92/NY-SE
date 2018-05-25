@@ -17,7 +17,7 @@ class PagesController < ApplicationController
     @user = current_user
     @all_socks = policy_scope(Sock)
     query = "SELECT * FROM transactions JOIN socks ON transactions.sock_id = socks.id WHERE socks.user_id = ?"
-    @my_socks = Transaction.find_by_sql([ query, @user.id ]).uniq
+    @transactions = Transaction.find_by_sql([ query, @user.id ]).uniq
 
     @all_transactions = policy_scope(Transaction)
     @my_transactions = Transaction.where(user_id: current_user.id)

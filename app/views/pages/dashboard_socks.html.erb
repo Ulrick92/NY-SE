@@ -1,35 +1,18 @@
-<h1>Dashboard</h1>
-
+<div class="banner-dashboard"><h1>My socks</h1></div>
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <%= cl_image_tag(current_user.photo, width: 100, :transformation=>[
-  {:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"crop"},
-  {:width=>200, :crop=>"scale"}
-  ], style:"border-radius: 50%") %>
-      <h4><%= current_user.first_name %> <%= current_user.last_name %> </h4>
-    </div>
-    <div class="col-xs-12 col-sm-6">
-      <div class="add">
-        <%= link_to " + Create an add ", new_sock_path, class: "btoun-rose-cool navbar-wagon-link" %>
-      </div>
-    </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <h2>My socks</h2>
   <ul class="inbox">
     <% @my_socks.each do |sock| %>
       <li class="message">
-          <div class="message-profile flex-item"><%= cl_image_tag(sock.photo) %></div>
-          <div class="message-detail flex-item">
-            <div class="name"><strong><%= sock.title %></strong></div>
+          <div class="message-profile flex-item"><%= cl_image_tag(sock.photo,
+      width: 50, height: 50, crop: :fill) %></div>
+          <div class="message-body">
+            <div class="message-detail flex-item">
+              <div class="name"><strong><%= sock.title %></strong></div>
+            </div>
           </div>
           <%= link_to edit_sock_path(sock) do %>
             <i class="fa fa-edit"></i>  <%= t(".edit_sock", default: "Edit Sock") %>
-          <% end %>
+          <% end %>&nbsp;&nbsp;&nbsp;
           <%= link_to sock_path(sock), method: :delete do %>
             <i class="fa fa-trash-alt"></i>  <%= t(".destroy_sock", default: "Delete Sock") %>
           <% end %>
