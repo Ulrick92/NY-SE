@@ -12,8 +12,19 @@ puts "Users and Socks and transactions deleted"
 
 
 michel = User.create!(
+  first_name: "Michel",
+  last_name: "Dupont",
   email: "michel@michel.com",
-  password: "password"
+  password: "password",
+  remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1527254863/IMG_2739_NB_retouche%CC%81_Rond.jpg',
+)
+
+jack = User.create!(
+  first_name: "Jack",
+  last_name: "Clinton",
+  email: "jack@jack.com",
+  password: "password2",
+  remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1527254878/InvestInReims.jpg',
 )
 
 
@@ -28,7 +39,7 @@ a = Sock.new(
   color: 'black',
   cleanliness: 5,
   remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526994888/thought-catalog-470985-unsplash.jpg',
-  user_id: 1,
+  user_id: 2,
   location: "16 rue villa Gaudelet, Paris"
 )
 a.user = michel
@@ -43,7 +54,7 @@ b = Sock.new(
   color: 'green',
   cleanliness: 5,
   remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526994889/yasin-hosgor-459740-unsplash.jpg',
-  user_id: 1,
+  user_id: 2,
   location: "14 rue Crespin du Gast, Paris"
 )
 b.user = michel
@@ -58,7 +69,7 @@ c = Sock.new(
   color: 'red',
   cleanliness: 5,
   remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526999126/jstzei2rn7dl9itsir0i.jpg',
-  user_id: 1,
+  user_id: 2,
   location: "3535 Angus Road, New York"
 )
 c.user = michel
@@ -73,7 +84,7 @@ d = Sock.new(
   color: 'white',
   cleanliness: 2,
   remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526999040/xpcbu3qdzdgtrd1ki6s3.jpg',
-  user_id: 1,
+  user_id: 2,
   location: "26 Guild Street, London"
 )
 d.user = michel
@@ -88,7 +99,7 @@ e = Sock.new(
   color: 'blue',
   cleanliness: 7,
   remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526998981/e90b6dl3rbteoid74m0x.jpg',
-  user_id: 1,
+  user_id: 2,
   location: "Bodestraße 1-3, Berlin"
 )
 e.user = michel
@@ -103,7 +114,7 @@ f = Sock.new(
   color: 'gray',
   cleanliness: 10,
   remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526994888/thought-catalog-470985-unsplash.jpg',
-  user_id: 1,
+  user_id: 2,
   location: "Arendalsgata 16, Oslo"
 )
 f.user = michel
