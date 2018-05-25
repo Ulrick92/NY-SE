@@ -12,6 +12,15 @@ class TransactionPolicy < ApplicationPolicy
   def update?
     return true
   end
+
+  def refuses_user?
+    true
+  end
+
+  def validates_user?
+    true
+  end
+
   # def confirm?
   #   return true
   # end

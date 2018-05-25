@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   patch 'users/:id', to: 'users#update'
   get 'users/:id', to: 'users#show', as: :user
   root to: 'pages#home'
-  get '/dashboard', to: 'pages#dashboard', as: :dashboard
-  patch '/transactions/:id/validate', to: 'pages#validates_user', as: :validates
-  patch '/transactions/:id/refuse', to: 'pages#refuses_user', as: :refuses
+  get '/dashboard/seller', to: 'pages#dashboard_seller', as: :dashboard_seller
+  get '/dashboard/buyer', to: 'pages#dashboard_buyer', as: :dashboard_buyer
+  get '/dashboard/socks', to: 'pages#dashboard_socks', as: :dashboard_socks
+  patch '/transactions/:id/validate', to: 'transactions#validates_user', as: :validates
+  patch '/transactions/:id/refuse', to: 'transactions#refuses_user', as: :refuses
 
   resources :socks do
     resources :transactions, only: [ :new, :create, :show, :edit, :update ]

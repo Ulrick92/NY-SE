@@ -22,43 +22,41 @@
   <h2>My socks and bookings</h2>
 
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">My socks</a></li>
-    <li><a data-toggle="tab" href="#menu1">My bookings</a></li>
+    <li class="active"><a data-toggle="tab" href="#home">Bookings</a></li>
+    <li><a data-toggle="tab" href="#menu1">Sales</a></li>
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
       <ul class="inbox">
-        <% @my_socks.each do |sock| %>
+        <% @transactions.each do |transaction| %>
           <li class="message">
-              <div class="message-profile flex-item"><%= cl_image_tag(sock.user.photo) %></div>
+              <div class="message-profile flex-item"><%= cl_image_tag(transaction.user.photo) %></div>
               <div class="message-detail flex-item">
-                <div class="name"><strong><%= sock.user.email %></strong></div>
-              </div>
-              <div class="message-text">
-                <strong> <%= sock.shipping_method %> </strong>
+                <div class="name"><strong><%= transaction.user.email %></strong></div>
               </div>
               <div class="message-statut flex-item">
-                <%= link_to 'Accept', validates_path(sock), method: :patch, class: 'btn btn-success' %>
-                <%= link_to 'Decline', refuses_path(sock), method: :patch, class: 'btn btn-danger' %>
+                <% if transaction.statut == "pending" %>
+                  <%= link_to 'Accept', validates_path(transaction), method: :patch, class: 'btn btn-success' %>
+                  <%= link_to 'Decline', refuses_path(transaction), method: :patch, class: 'btn btn-danger' %>
+                <% else %>
+                  <%= transaction.statut %>
+                <% end %>
               </div>
             </li>
         <% end %>
       </ul>    </div>
     <div id="menu1" class="tab-pane fade">
       <ul class="inbox">
-        <% @my_transactions.each do |transaction| %>
+        <% @my_sales.each do |sale| %>
           <li class="message">
-              <div class="message-profile flex-item"><%= cl_image_tag(transaction.user.photo) %></div>
+              <div class="message-profile flex-item"><%= cl_image_tag(sale.user.photo) %></div>
               <div class="message-detail flex-item">
-                <div class="name"><strong><%= transaction.user.email %></strong></div>
-                <div class="date"><%= transaction.starts_on %></div>
-                <div class="date"><%= transaction.ends_on %></div>
-              </div>
-              <div class="message-text">
-                <strong> <%= transaction.sock.shipping_method %> </strong>
+                <div class="name"><strong><%= sale.user.email %></strong></div>
+                <div class="date"><%= sale.starts_on %></div>
+                <div class="date"><%= sale.ends_on %></div>
               </div>
               <div class="message-statut flex-item">
-                <div class="statut"><%= transaction.statut %></div>
-                <div class="price"> <%= transaction.sock.price_per_day %></div>
+                <div class="statut"><%= sale.statut %></div>
+                <div class="price"> <%= sale.sock.price_per_day %></div>
               </div>
             </li>
         <% end %>
