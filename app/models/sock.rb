@@ -13,7 +13,7 @@ class Sock < ApplicationRecord
   validates :cleanliness, inclusion: { in: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] }, numericality: {only_integer: true}
   mount_uploader :photo, PhotoUploader
   geocoded_by :location
-  after_validation :geocode
+  after_validation :geocode, if: :will_save_change_to_location?
 
   include PgSearch
   pg_search_scope :search_by_location,
