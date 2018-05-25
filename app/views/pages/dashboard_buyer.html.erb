@@ -1,64 +1,45 @@
-<h1>Dashboard</h1>
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <%= cl_image_tag(current_user.photo, width: 100, :transformation=>[
-  {:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"crop"},
-  {:width=>200, :crop=>"scale"}
-  ], style:"border-radius: 50%") %>
-      <h4><%= current_user.first_name %> <%= current_user.last_name %> </h4>
-    </div>
-    <div class="col-xs-12 col-sm-6">
-      <div class="add">
-        <%= link_to " + Create an add ", new_sock_path, class: "btoun-rose-cool navbar-wagon-link" %>
-      </div>
-    </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <h2>My socks and bookings</h2>
-
+<div class="banner-dashboard"><h1>Pending Bookings And Historic</h1></div>
+<div class="container dashboard-container">
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Bookings</a></li>
-    <li><a data-toggle="tab" href="#menu1">Sales</a></li>
+    <li class="active"><a data-toggle="tab" href="#home">Pending bookings</a></li>
+    <li><a data-toggle="tab" href="#menu1">Historic</a></li>
+  </ul>
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
       <ul class="inbox">
-        <% @my_socks.each do |sock| %>
-          <li class="message">
-            <div class="message-profile flex-item"><%= cl_image_tag(sock.photo) %></div>
-            <div class="message-name">
-              <div class="name"><strong><%= sock.title %></strong></div>
-            </div>
-            <div class="message-body">
-              <p><strong><%= sock.created_at %></strong></p>
-              <p><%= sock.user.email  %></p>
-            </div>
-          <div class="message-statut flex-item">
-                <%= link_to 'Accept', validates_path(sock), method: :patch, class: 'btn btn-success' %>
-                <%= link_to 'Decline', refuses_path(sock), method: :patch, class: 'btn btn-danger' %>
-          </div>
-        </li>
-        <% end %>
-      </ul>    </div>
-    <div id="menu1" class="tab-pane fade">
-      <ul class="inbox">
         <% @my_transactions.each do |transaction| %>
           <li class="message">
-          <div class="message-profile flex-item"><%= cl_image_tag(transaction.sock.photo) %></div>
-          <div class="message-detail flex-item">
-            <div class="name"><strong><%= transaction.sock.title %></strong></div>
-          </div>
-          <div class="message-body">
-              <p><strong><%= transaction.created_at %></strong></p>
-              <p><%= transaction.user.email  %></p>
+              <div class="avatar-large"><%= cl_image_tag(transaction.user.photo) %></div>
+              <div class="message-name">
+                <div class="name"><strong><%= transaction.user.email %></strong></div>
+              </div>
+              <div class="message-body"><%= transaction.created_at %></div>
+              <div class="message-statut">
+                <div class="statut"><%= transaction.statut %></div>
+                <div class="price"> <%= transaction.sock.price_per_day %>€/day</div>
+              </div>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <ul class="inbox">
+        <% @transactions.each do |transaction| %>
+          <li class="message" data-id="<%= transaction.id %>">
+            <div class="avatar-large"><%= cl_image_tag(transaction.user.photo) %></div>
+            <div class="message-name">
+            <div class="name"><strong><%= transaction.user.email %></strong></div>
             </div>
-        </li>
+            <div class="message-body"></div>
+            <div class="message-statut">
+                <%= transaction.statut %>
+            </div>
+          </li>
         <% end %>
       </ul>
     </div>
   </div>
 </div>
+
+
+
