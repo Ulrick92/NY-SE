@@ -23,6 +23,16 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
 
+      <% if user_signed_in? %>
+
+        <%= link_to "My orders", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "My demands", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "My socks", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
+
+
+
+
 
       <!-- Links when logged in -->
       <%= link_to "Discover all socks", socks_path, class: "btoun-bleu-cool navbar-wagon-link"%>
@@ -34,7 +44,7 @@
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= cl_image_tag current_user.photo, :transformation=>[{:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"crop"}, {:width=>200, :crop=>"scale"} ], class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= cl_image_tag current_user.photo, :transformation=>[{:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"fill"} ], class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "#" do %>
@@ -42,11 +52,10 @@
               <% end %>
             </li>
             <li>
-             <%= link_to "My orders", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-             </li>
-             <li>
-                <%= link_to "My socks", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-             </li>
+              <%= link_to dashboard_socks_path do %>
+                <i class="fas fa-tachometer-alt"></i> <%= t(".dashboard", default: "Dashboard") %>
+              <% end %>
+            </li>
             <li>
               <%= link_to "#" do %>
                 <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
