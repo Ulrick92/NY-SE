@@ -1,5 +1,13 @@
 <div class="img-product" style="background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url('<%= @sock.photo %>')center center; background-size: cover;"><h1><%= @sock.title %></h1></div>
 <div class="sock-detail-container">
+  <div class="proprio">
+    <p style="font-family:'Nunito';padding-bottom:5px;font-weight:bold"> Owner informations</p>
+   <%= cl_image_tag @sock.user.photo, :transformation=>[{:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"crop"}, {:width=>200, :crop=>"scale"} ], class: "avatar" %>
+   <p style="font-family:'Nunito';font-weight:lighter"> <%= @sock.user.first_name %> <%= @sock.user.last_name %> </p>
+
+   <p style="font-family:'Nunito';padding-bottom:5px; font-weight:bold; padding-top:8px"> <%= image_tag "place.png", id: "place", style:"height:20px"%> City location </p>
+   <p> <%=  @sock.location %> </p>
+  </div>
   <div class="sock-display">
     <div>
       <div class="sock-features">
