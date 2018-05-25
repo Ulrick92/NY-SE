@@ -50,6 +50,7 @@ class SocksController < ApplicationController
     if @sock.save
       redirect_to sock_path(@sock)
     else
+      p @sock.errors.messages
       render 'new'
     end
   end
@@ -78,6 +79,6 @@ class SocksController < ApplicationController
   end
 
   def sock_params
-    params.require(:sock).permit(:size, :color, :price_per_day, :shipping_method, :location, :photo, :description, :cleanliness, :title)
+    params.require(:sock).permit(:size, :color, :price_per_day, :shipping_method, :location, :photo, :photo_cache, :description, :cleanliness, :title)
   end
 end
