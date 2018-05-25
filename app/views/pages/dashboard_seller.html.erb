@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6">
       <%= cl_image_tag(current_user.photo, width: 100, :transformation=>[
-  {:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"crop"},
+  {:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"fill"},
   {:width=>200, :crop=>"scale"}
   ], style:"border-radius: 50%") %>
       <h4><%= current_user.first_name %> <%= current_user.last_name %> </h4>
