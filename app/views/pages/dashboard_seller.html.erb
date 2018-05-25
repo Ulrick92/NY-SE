@@ -10,7 +10,7 @@
       <ul class="inbox">
         <% @transactions.each do |transaction| %>
           <li class="message" data-id="<%= transaction.id %>">
-              <div class="avatar-large"><%= cl_image_tag(transaction.user.photo) %></div>
+              <div class="avatar-large"><%= cl_image_tag(transaction.user.photo, width: 50, height: 50, crop: :fill) %></div>
               <div class="message-name">
                 <div class="name"><strong><%= transaction.user.email %></strong></div>
               </div>
@@ -30,7 +30,7 @@
       <ul class="inbox">
         <% @my_sales.each do |sale| %>
           <li class="message">
-              <div class="message-profile flex-item"><%= cl_image_tag(sale.user.photo) %></div>
+              <div class="message-profile flex-item"><%= cl_image_tag(sale.user.photo, :width=>0.5, :crop=>"scale") %></div>
               <div class="message-detail flex-item">
                 <div class="name"><strong><%= sale.user.email %></strong></div>
                 <div class="date"><%= sale.starts_on %></div>
