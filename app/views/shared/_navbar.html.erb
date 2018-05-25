@@ -42,11 +42,10 @@
               <% end %>
             </li>
             <li>
-             <%= link_to "My orders", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-             </li>
-             <li>
-                <%= link_to "My socks", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-             </li>
+              <%= link_to dashboard_path do %>
+                <i class="fas fa-tachometer-alt"></i> <%= t(".dashboard", default: "Dashboard") %>
+              <% end %>
+            </li>
             <li>
               <%= link_to "#" do %>
                 <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
