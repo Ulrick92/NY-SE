@@ -1,0 +1,66 @@
+<h1>Dashboard</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <%= cl_image_tag(current_user.photo, width: 100, :transformation=>[
+  {:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"fill"},
+  {:width=>200, :crop=>"scale"}
+  ], style:"border-radius: 50%") %>
+      <h4><%= current_user.first_name %> <%= current_user.last_name %> </h4>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="add">
+        <%= link_to " + Create an add ", new_sock_path, class: "btoun-rose-cool navbar-wagon-link" %>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h2>My socks and bookings</h2>
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Bookings</a></li>
+    <li><a data-toggle="tab" href="#menu1">Sales</a></li>
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <ul class="inbox">
+        <% @transactions.each do |transaction| %>
+          <li class="message" data-id="<%= transaction.id %>">
+              <div class="message-profile flex-item"><%= cl_image_tag(transaction.user.photo) %></div>
+              <div class="message-detail flex-item">
+                <div class="name"><strong><%= transaction.user.email %></strong></div>
+              </div>
+              <div class="message-statut flex-item">
+                <% if transaction.statut == "pending" %>
+                  <%= link_to 'Accept', validates_path(transaction), method: :patch, class: 'btn btn-success' %>
+                  <%= link_to 'Decline', refuses_path(transaction), method: :patch, class: 'btn btn-danger' %>
+                <% else %>
+                  <%= transaction.statut %>
+                <% end %>
+              </div>
+            </li>
+        <% end %>
+      </ul>    </div>
+    <div id="menu1" class="tab-pane fade">
+      <ul class="inbox">
+        <% @my_sales.each do |sale| %>
+          <li class="message">
+              <div class="message-profile flex-item"><%= cl_image_tag(sale.user.photo) %></div>
+              <div class="message-detail flex-item">
+                <div class="name"><strong><%= sale.user.email %></strong></div>
+                <div class="date"><%= sale.starts_on %></div>
+                <div class="date"><%= sale.ends_on %></div>
+              </div>
+              <div class="message-statut flex-item">
+                <div class="statut"><%= sale.statut %></div>
+                <div class="price"> <%= sale.sock.price_per_day %></div>
+              </div>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -67,7 +67,7 @@ class SocksController < ApplicationController
 
   def destroy
     @sock.destroy
-    redirect_to socks_path
+    redirect_to dashboard_socks_path(current_user)
   end
 
   private

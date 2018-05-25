@@ -44,6 +44,23 @@ class TransactionsController < ApplicationController
     authorize @transaction
   end
 
+   def validates_user
+    @transaction = Transaction.find(params[:id])
+    @transaction.statut = "validate"
+    authorize @transaction
+    @transaction.save
+    redirect_to dashboard_seller_path(current_user)
+  end
+
+  # NOT IN USE
+  def refuses_user
+    @transaction = Transaction.find(params[:id])
+    @transaction.statut = "decline"
+    authorize @transaction
+    @transaction.save
+    redirect_to dashboard_seller_path(current_user)
+  end
+
   private
 
   def transaction_params
