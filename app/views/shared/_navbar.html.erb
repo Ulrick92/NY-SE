@@ -4,9 +4,9 @@
     <%= image_tag "logo_nyse.png", height: 50 %>
   <% end %>
 
-  <form class="navbar-form navbar-left" role="search">
+  <form class="navbar-form navbar-left" role="search" action="<%= socks_path %>">
      <div class="form-group">
-       <%= form_tag socks_path, method: :get do %>
+       <%= form_tag do %>
          <%= text_field_tag :query,
            params[:query],
            class: "form-control",
