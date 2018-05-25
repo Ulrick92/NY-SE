@@ -16,6 +16,32 @@
   display: flex;
   justify-content: center;
 }
+.sock-booking .box-booking {
+  display:flex;
+  width:370px;
+  justify-content:center;
+  background-color: white;
+  border: 1px solid rgba(234, 243, 242, 1.00);
+  border-radius: 3px;
+  padding:20px 0;
+}
+.box-booking .price-content{
+  font-weight:bold;
+  border-bottom: 1px solid rgba(234, 243, 242, 1.00);
+  padding:0 0 10px;
+  margin:0 0 10px;
+}
+.box-booking .price-content .price{
+  font-size:24px;
+}
+.box-booking .price-content .day{
+  font-size:10px;
+}
+.box-booking .simple_form .btn-book{
+  background:#ff5a5f;
+  color:#fff;
+  font-weight:bold;
+}
 h1 {
   margin:0;
   text-transform: uppercase;
@@ -57,12 +83,4 @@ ul {
   background: #B5E0D6;
   text-decoration: none;
   color: white;
-}
-
-.box-booking {
-  background-color: white;
-  border: 1px solid RGBA(234, 243, 242, 1.00);
-  border-radius: 3px;
-  padding-left: 103px;
-  margin:20px;
 }
