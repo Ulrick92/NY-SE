@@ -1,6 +1,7 @@
 <%= simple_form_for(@sock) do |f| %>
   <%= f.input :title, input_html: { class: 'input-sm' } %>
   <%= f.input :description %>
+  <%= f.input :location %>
   <div class="row">
     <div class="col-xs-6">
       <%= f.input :size, as: :select, collection: Sock::SIZES, input_html: { prompt: "Filter by size" } %>

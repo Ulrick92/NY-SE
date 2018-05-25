@@ -23,6 +23,16 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
 
+      <% if user_signed_in? %>
+
+        <%= link_to "My orders", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "My demands", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "My socks", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
+
+
+
+
 
       <!-- Links when logged in -->
       <%= link_to "Discover all socks", socks_path, class: "btoun-bleu-cool navbar-wagon-link"%>
