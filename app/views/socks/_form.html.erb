@@ -31,7 +31,7 @@
       <li><i class="far fa-smile"></i></li>
     </ul>
   </div>
-  <%= f.input :cleanliness, as: :hidden %>
+  <%= f.input :cleanliness, as: :hidden, input_html: { value: @sock.cleanliness || 3 } %>
   <%= f.input :photo, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
   <%= f.input :photo_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
   <%= f.button :submit, :class => 'btn btn-primary' %>
