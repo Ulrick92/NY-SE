@@ -24,11 +24,12 @@
       </div>
     </div>
   </div>
-  <div class="box-booking">
     <div class="sock-booking">
-      <div>
-        <%= render "form_booking" %>
+      <div class="box-booking">
+        <div>
+          <div class="price-content"><span class="price"><%= @sock.price_per_day %></span>&euro; <span class="day">per day</span></div>
+          <%= render "form_booking" %>
+        </div>
       </div>
     </div>
-  </div>
 </div>

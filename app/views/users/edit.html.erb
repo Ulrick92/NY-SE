@@ -1,10 +1,18 @@
-<h1>Edit your profile</h1>
-
-
-<%= simple_form_for(@user) do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :photo, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
-  <%= f.input :photo_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
-  <%= f.button :submit, :class => 'btn btn-primary' %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="edit-user-container">
+      <div>
+        <h1>Edit your profile</h1>
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+          <%= simple_form_for(@user) do |f| %>
+            <%= f.input :first_name %>
+            <%= f.input :last_name %>
+            <%= f.input :photo, input_html: { class: 'custom-file-input' }, wrapper_html: { class: 'custom-file' } %>
+            <%= f.input :photo_cache, as: :hidden, input_html: { class: 'custom-file-input' } %>
+            <%= f.button :submit, :class => 'btn btn-primary' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
