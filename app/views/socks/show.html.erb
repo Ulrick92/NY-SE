@@ -2,7 +2,7 @@
 <div class="sock-detail-container">
   <div class="proprio">
     <p style="font-family:'Nunito';padding-bottom:5px;font-weight:bold"> Owner informations</p>
-   <%= cl_image_tag @sock.user.photo, :transformation=>[{:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"crop"}, {:width=>200, :crop=>"scale"} ], class: "avatar" %>
+   <%= cl_image_tag @sock.user.photo, :transformation=>[{:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"fill"}, {:width=>200, :crop=>"fill"} ], class: "avatar" %>
    <p style="font-family:'Nunito';font-weight:lighter"> <%= @sock.user.first_name %> <%= @sock.user.last_name %> </p>
 
    <p style="font-family:'Nunito';padding-bottom:5px; font-weight:bold; padding-top:8px"> <%= image_tag "place.png", id: "place", style:"height:20px"%> City location </p>
