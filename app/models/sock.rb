@@ -10,7 +10,7 @@ class Sock < ApplicationRecord
   validates :shipping_method, presence: true
   COLORS = %w(white black red blue green yellow purple orange pink gray marron)
   validates :color, inclusion: { in: COLORS }
-  validates :cleanliness, inclusion: { in: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] }, numericality: {only_integer: true}
+  validates :cleanliness, inclusion: { in: [1, 2, 3, 4, 5] }, numericality: {only_integer: true}
   mount_uploader :photo, PhotoUploader
   geocoded_by :location
   after_validation :geocode

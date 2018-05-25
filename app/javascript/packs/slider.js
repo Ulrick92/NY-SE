@@ -1,4 +1,4 @@
 import { sliderValue } from "components/slidebar";
-const slider = document.getElementById("myRange");
-slider.addEventListener("click", sliderValue);
+const bigSlider = document.getElementById("bigrange");
+bigSlider.addEventListener("click", sliderValue);
 
