@@ -27,9 +27,22 @@
 </div>
 <h1>Enter your informations</h1>
 <div>
-<%= simple_form_for [@sock,@transaction], url: new_sock_transaction_path(@sock) do |f| %>
+<%= simple_form_for [@sock, @transaction] do |f| %>
  <%= f.input :address %>
- <%= f.input :pay_method %>
+ <div classe="container-radio">
+   <div class="button-wrap">
+      <label for="yes-button" class="button-label">
+        <h1>Carte Blue</h1>
+      </label>
+      <label for="no-button" class="button-label">
+        <h1>Cheque</h1>
+      </label>
+    </div>
+  </div>
+
+  <%= f.input :pay_method, as: :hidden %>
  <%= f.submit %>
 <% end %>
 </div>
+
+<%= javascript_pack_tag 'pay_buttons' %>
