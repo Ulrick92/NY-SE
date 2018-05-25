@@ -59,7 +59,7 @@ c = Sock.new(
   cleanliness: 5,
   remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526999126/jstzei2rn7dl9itsir0i.jpg',
   user_id: 1,
-  location: "95 rue Oberkampf, Paris"
+  location: "3535 Angus Road, New York"
 )
 c.user = michel
 c.save!
@@ -74,7 +74,7 @@ d = Sock.new(
   cleanliness: 2,
   remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526999040/xpcbu3qdzdgtrd1ki6s3.jpg',
   user_id: 1,
-  location: "32 rue Saint-Maur, Paris"
+  location: "26 Guild Street, London"
 )
 d.user = michel
 d.save!
@@ -89,7 +89,7 @@ e = Sock.new(
   cleanliness: 7,
   remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526998981/e90b6dl3rbteoid74m0x.jpg',
   user_id: 1,
-  location: "78 rue Parmentier, Paris"
+  location: "Bodestraße 1-3, Berlin"
 )
 e.user = michel
 e.save!
@@ -104,7 +104,7 @@ f = Sock.new(
   cleanliness: 10,
   remote_photo_url: 'http://res.cloudinary.com/dp4vga3rz/image/upload/v1526994888/thought-catalog-470985-unsplash.jpg',
   user_id: 1,
-  location: "55 avenue de la République, Paris"
+  location: "Arendalsgata 16, Oslo"
 )
 f.user = michel
 f.save!
