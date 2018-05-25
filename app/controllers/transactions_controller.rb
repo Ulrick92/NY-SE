@@ -18,11 +18,12 @@ class TransactionsController < ApplicationController
     # we need `sock_id` to asssociate transaction with corresponding restaurant
     @transaction.sock = Sock.find(params[:sock_id])
     @transaction.user = current_user
+    @transaction.statut = "pending"
     authorize @transaction
     if @transaction.save
       redirect_to edit_sock_transaction_path(@transaction.sock_id, @transaction)
     else
-      render "new"
+      render "socks/show"
     end
   end
 
