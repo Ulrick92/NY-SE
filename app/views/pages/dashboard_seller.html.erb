@@ -28,7 +28,7 @@
     <div id="home" class="tab-pane fade in active">
       <ul class="inbox">
         <% @transactions.each do |transaction| %>
-          <li class="message">
+          <li class="message" data-id="<%= transaction.id %>">
               <div class="message-profile flex-item"><%= cl_image_tag(transaction.user.photo) %></div>
               <div class="message-detail flex-item">
                 <div class="name"><strong><%= transaction.user.email %></strong></div>
