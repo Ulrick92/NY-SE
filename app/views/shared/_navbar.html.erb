@@ -25,9 +25,9 @@
 
       <% if user_signed_in? %>
 
-        <%= link_to "My orders", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-        <%= link_to "My demands", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-        <%= link_to "My socks", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "My orders", dashboard_buyer_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "My demands", dashboard_seller_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "My socks", dashboard_socks_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <% end %>
 
 
